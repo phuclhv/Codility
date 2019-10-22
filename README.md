@@ -1,2 +1,2 @@
 # Codility
-My solution for Codility 17 Lessons 
+My solution for Codility 17 Lessons (with test)
