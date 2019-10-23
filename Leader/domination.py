@@ -43,12 +43,15 @@ class TestStringMethods(unittest.TestCase):
     # Create a psedo stack where we only hold stack_value, and stack_size
     stack_value, stack_size = 0, 0
     
+    
     for idx in range(len(A)):
+      # add new value when stack_size == 0 
       if stack_size == 0:
         stack_size += 1
         stack_value = A[idx]
         res = idx
       else:
+        # Delete value when there's a pair with different values
         if stack_value != A[idx]:
           stack_size -= 1
         else:
@@ -56,10 +59,12 @@ class TestStringMethods(unittest.TestCase):
                 
     count_occurence = 0
     
+    # Check if value store in stack does occurs more than half time or not
     for value in A:
       if value == stack_value:
         count_occurence += 1
-            
+    
+    # return index if the value appear more than half length of array
     if count_occurence > len(A)//2:
       return res
         

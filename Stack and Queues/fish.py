@@ -55,6 +55,9 @@ class TestStringMethods(unittest.TestCase):
   def solution(self, A, B):
     down_stream = []
     alive_count = 0
+
+    # Create a stack of down_stream fish
+    # If a fish is upstream, if it can eat all fish going downstream before it, then it's alive. Increase count
     for idx in range(len(A)):
         if B[idx] == 1:
             down_stream.append(A[idx])
@@ -66,7 +69,8 @@ class TestStringMethods(unittest.TestCase):
                     break
             else:
                 alive_count += 1        
-                
+
+    # At the end, add all alive fish going downstream                
     alive_count += len(down_stream)
     return alive_count
 

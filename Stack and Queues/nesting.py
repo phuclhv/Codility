@@ -61,6 +61,8 @@ class TestStringMethods(unittest.TestCase):
 
   def solution(self, S):
     count_open = 0
+
+    # Going through the list, return 0 if there's more closed bracket than opened bracket at any point
     for bracket in S:
         if bracket == '(':
             count_open += 1
@@ -68,6 +70,8 @@ class TestStringMethods(unittest.TestCase):
             count_open -= 1
         if count_open < 0:
             return 0
+
+    # Only return true if all brackets have been matched            
     return 0 if count_open != 0 else 1
 
 if __name__ == '__main__':

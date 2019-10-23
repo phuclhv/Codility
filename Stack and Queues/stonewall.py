@@ -38,13 +38,18 @@ class TestStringMethods(unittest.TestCase):
     self.assertEqual(self.solution([1,2,1,2,1,2,1,2,1,2]), 6)
   
   def solution(self, H):
-  # write your code in Python 3.6
     num_blocks  = 0
     block_height = 0
     blocks = []
+
+    # if the height is less then total block height: keep removing block
+    # if the height is larger then total block height: adding one block
+    
     for idx in range(len(H)):
+
       while blocks and block_height > H[idx]:
         block_height -= blocks.pop()
+
       if H[idx] > block_height:
         num_blocks += 1
         blocks.append(H[idx] - block_height)
