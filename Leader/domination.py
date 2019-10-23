@@ -39,6 +39,8 @@ class TestStringMethods(unittest.TestCase):
     self.assertEqual(self.solution([4,2,-1,3,3]),-1)
 
   def solution(self, A):
+
+    # Create a psedo stack where we only hold stack_value, and stack_size
     stack_value, stack_size = 0, 0
     
     for idx in range(len(A)):
