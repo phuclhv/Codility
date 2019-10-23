@@ -44,7 +44,6 @@ class TestStringMethods(unittest.TestCase):
 
     # if the height is less then total block height: keep removing block
     # if the height is larger then total block height: adding one block
-    
     for idx in range(len(H)):
 
       while blocks and block_height > H[idx]:
